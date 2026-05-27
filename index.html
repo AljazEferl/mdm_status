@@ -1178,7 +1178,7 @@ async function doServiceLogin() {
       scope: 'https://graph.microsoft.com/.default'
     });
 
-    const res = await fetch(`https://login.microsoftonline.com/${tenantId}/oauth2/v2.0/token`, {
+    const res = await fetch(`https://corsproxy.io/?https://login.microsoftonline.com/${tenantId}/oauth2/v2.0/token`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body
@@ -1189,16 +1189,13 @@ async function doServiceLogin() {
       throw new Error(data.error_description || data.error || `Token napaka ${res.status}`);
     }
 
-    // Store token and metadata
     localStorage.setItem('mdm_sa_tenant', tenantId);
     localStorage.setItem('mdm_sa_client', clientId);
     sessionStorage.setItem('mdm_sa_token', data.access_token);
     sessionStorage.setItem('mdm_sa_token_exp', String(Date.now() + (data.expires_in - 60) * 1000));
 
-    // Set fake "account" for display
     account = { name: 'Service Account', username: clientId };
-    
-    // Show dashboard
+
     document.getElementById('login-screen').style.display = 'none';
     document.getElementById('dashboard').style.display = 'block';
     document.getElementById('topbar-right').innerHTML = `
@@ -1219,7 +1216,7 @@ async function doServiceLogin() {
     btn.disabled = false;
     btn.textContent = 'Prijava s service računom';
   }
-}  
+}
 </script>
 </body>
 </html>
