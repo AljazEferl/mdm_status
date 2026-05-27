@@ -24,12 +24,10 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--f
 ::-webkit-scrollbar-track{background:transparent;}
 ::-webkit-scrollbar-thumb{background:var(--border3);border-radius:3px;}
 
-/* Layout */
 #app{display:flex;flex-direction:column;min-height:100vh;}
 #topbar{padding:14px 32px;background:var(--surface);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
 #content{flex:1;padding:28px 32px;background:var(--bg);}
 
-/* Topbar */
 .logo{display:flex;align-items:center;gap:10px;}
 .logo-icon{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#378ADD,#7F77DD);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .logo-title{font-size:15px;font-weight:600;letter-spacing:-.025em;}
@@ -47,13 +45,12 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--f
 .btn-danger{background:rgba(226,75,74,.12);border:1px solid rgba(226,75,74,.25);color:#f87171;}
 .btn-danger:hover{background:rgba(226,75,74,.2);}
 
-/* Login screen */
+/* Login */
 #login-screen{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:80vh;gap:0;}
 .login-card{background:var(--surface);border:1px solid var(--border2);border-radius:20px;padding:40px;width:440px;max-width:94vw;text-align:center;}
 .login-icon{width:64px;height:64px;border-radius:16px;background:linear-gradient(135deg,rgba(55,138,221,.15),rgba(127,119,221,.15));border:1px solid rgba(55,138,221,.25);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}
 .login-title{font-size:22px;font-weight:600;letter-spacing:-.03em;margin-bottom:8px;}
 .login-body{font-size:13px;color:var(--text2);line-height:1.7;margin-bottom:24px;}
-.login-note{font-size:11px;color:var(--text3);margin-top:16px;line-height:1.6;}
 .config-section{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:20px;text-align:left;}
 .config-title{font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
 .field-wrap{margin-bottom:10px;}
@@ -63,15 +60,20 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--f
 .btn-login{width:100%;padding:12px;border-radius:10px;background:linear-gradient(135deg,#378ADD,#7F77DD);border:none;color:#fff;font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;transition:opacity .15s;font-family:var(--font);}
 .btn-login:hover{opacity:.88;}
 .btn-login:disabled{opacity:.5;cursor:not-allowed;}
-.ms-logo{display:flex;align-items:center;gap:3px;}
-.ms-sq{width:7px;height:7px;}
+
+/* Tabs */
+.tab-bar{display:flex;gap:2px;margin-bottom:22px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:4px;width:fit-content;}
+.tab-btn{padding:7px 18px;border-radius:7px;font-size:13px;font-weight:500;cursor:pointer;border:none;background:transparent;color:var(--text2);font-family:var(--font);transition:all .15s;display:flex;align-items:center;gap:7px;}
+.tab-btn:hover{color:var(--text);}
+.tab-btn.active{background:var(--surface3);color:var(--text);border:1px solid var(--border2);}
+.tab-btn .tab-count{font-size:10px;padding:2px 6px;border-radius:10px;background:var(--blue-dim);color:var(--blue);font-weight:600;}
 
 /* Dashboard */
 .page-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:22px;flex-wrap:wrap;gap:12px;}
 .page-title{font-size:20px;font-weight:600;letter-spacing:-.03em;}
 .page-sub{font-size:12px;color:var(--text3);margin-top:3px;}
 
-/* KPI grid */
+/* KPI */
 .kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:18px;}
 .kpi-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);padding:16px 18px;position:relative;overflow:hidden;cursor:default;transition:transform .15s, border-color .15s;}
 .kpi-card.clickable{cursor:pointer;}
@@ -81,7 +83,7 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--f
 .kpi-val{font-size:28px;font-weight:600;letter-spacing:-.04em;line-height:1;}
 .kpi-sub{font-size:11px;color:var(--text3);margin-top:5px;}
 
-/* Filter bar */
+/* Filter */
 .filter-wrap{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:14px;}
 .filter-label{font-size:11px;color:var(--text3);margin-right:2px;}
 .f-btn{padding:4px 11px;border-radius:6px;font-size:11px;font-weight:500;border:1px solid var(--border);background:transparent;color:var(--text2);cursor:pointer;transition:all .12s;font-family:var(--font);}
@@ -89,8 +91,6 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--f
 .f-btn.active{background:rgba(55,138,221,.15);border-color:rgba(55,138,221,.4);color:#85B7EB;}
 .sep{color:var(--border3);margin:0 4px;}
 .count-badge{margin-left:auto;font-size:12px;color:var(--text3);}
-
-/* Search */
 .search-wrap{position:relative;flex:1;min-width:180px;max-width:280px;}
 .search-input{width:100%;padding:6px 11px 6px 30px;background:var(--surface2);border:1px solid var(--border2);border-radius:7px;color:var(--text);font-size:12px;outline:none;transition:border-color .15s;font-family:var(--font);}
 .search-input:focus{border-color:var(--blue);}
@@ -124,20 +124,38 @@ tbody tr:hover td{background:var(--surface2);}
 .badge-gp{background:rgba(186,117,23,.12);color:#fbbf24;}
 .badge-uk{background:rgba(74,82,112,.2);color:var(--text2);}
 .badge-stale{background:rgba(186,117,23,.12);color:#fbbf24;font-size:10px;padding:2px 7px;margin-left:6px;}
-
-/* OS chip */
 .os-chip{font-size:11px;font-weight:500;padding:3px 9px;border-radius:20px;}
 
-/* Loading */
+/* ── ORG VIEW ─────────────────────────────────────── */
+.org-search-wrap{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;}
+.org-sort-wrap{display:flex;align-items:center;gap:6px;}
+
+/* Org table row extras */
+.plat-mini{display:flex;gap:4px;flex-wrap:wrap;}
+.plat-pip{font-size:10px;font-weight:600;padding:2px 7px;border-radius:10px;}
+
+.compliance-bar-wrap{display:flex;align-items:center;gap:7px;}
+.compliance-bar-track{flex:1;height:6px;border-radius:3px;background:var(--surface3);min-width:60px;position:relative;overflow:hidden;}
+.compliance-bar-fill{height:100%;border-radius:3px;transition:width .5s ease;}
+.compliance-pct{font-size:11px;font-family:var(--mono);color:var(--text2);min-width:34px;text-align:right;}
+
+.org-drill-btn{font-size:11px;padding:3px 10px;border-radius:6px;border:1px solid var(--border2);background:transparent;color:var(--text3);cursor:pointer;font-family:var(--font);transition:all .12s;white-space:nowrap;}
+.org-drill-btn:hover{border-color:var(--blue);color:var(--blue);}
+
+.domain-chip{display:flex;align-items:center;gap:8px;}
+.domain-avatar{width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;font-family:var(--mono);}
+.domain-name{font-family:var(--mono);font-size:12px;font-weight:500;}
+.domain-tld{color:var(--text3);}
+
+/* Shared device row */
+.shared-row .domain-name{color:var(--text3);font-style:italic;}
+
+/* Loading / empty */
 .loading-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px;gap:14px;}
 .spinner{width:28px;height:28px;border:2px solid rgba(55,138,221,.2);border-top-color:var(--blue);border-radius:50%;animation:spin .7s linear infinite;}
 .loading-text{font-size:13px;color:var(--text2);}
-
-/* Empty */
 .empty-wrap{display:flex;flex-direction:column;align-items:center;padding:60px;gap:10px;text-align:center;}
 .empty-text{font-size:13px;color:var(--text2);}
-
-/* Error */
 .error-box{background:rgba(226,75,74,.08);border:1px solid rgba(226,75,74,.2);border-radius:8px;padding:12px 16px;font-size:12px;color:#f87171;margin-bottom:14px;}
 
 /* Progress bars */
@@ -148,7 +166,7 @@ tbody tr:hover td{background:var(--surface2);}
 .pbar-fill{height:100%;border-radius:2px;transition:width .6s ease;}
 .pbar-count{font-size:11px;font-family:var(--mono);color:var(--text3);min-width:24px;text-align:right;}
 
-/* Chart card */
+/* Chart */
 .chart-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);padding:18px 20px;margin-bottom:18px;}
 .chart-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:16px;}
 .chart-title{font-size:14px;font-weight:600;letter-spacing:-.02em;}
@@ -163,9 +181,6 @@ tbody tr:hover td{background:var(--surface2);}
 .chart-tooltip-date{font-size:10px;color:var(--text3);margin-bottom:3px;text-transform:uppercase;letter-spacing:.05em;}
 .chart-tooltip-val{font-family:var(--mono);font-weight:500;}
 .chart-tooltip-val .dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:5px;vertical-align:middle;}
-
-/* Date picker */
-.date-picker-wrap{position:relative;display:inline-flex;align-items:center;gap:4px;}
 .date-input{padding:4px 8px;background:var(--surface2);border:1px solid var(--border2);border-radius:6px;color:var(--text);font-size:11px;font-family:var(--mono);outline:none;cursor:pointer;color-scheme:dark;}
 .date-input:focus{border-color:var(--blue);}
 .date-input::-webkit-calendar-picker-indicator{filter:invert(.6);cursor:pointer;}
@@ -187,21 +202,20 @@ tbody tr:hover td{background:var(--surface2);}
 .modal-row-val{color:var(--text);font-family:var(--mono);font-size:11px;}
 .modal-close{margin-top:18px;width:100%;}
 
-@keyframes spin{to{transform:rotate(360deg);}}
-@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.4;}}
-@keyframes fadeUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
-@keyframes toastIn{from{opacity:0;transform:translateX(20px);}to{opacity:1;transform:translateX(0);}}
-@keyframes toastOut{to{opacity:0;transform:translateX(20px);}}
-.anim{animation:fadeUp .3s ease both;}
-
-/* Chart SVG styles */
+/* Trend SVG */
 .trend-grid-line{stroke:var(--border);stroke-width:1;stroke-dasharray:2 4;}
 .trend-axis-text{fill:var(--text3);font-size:10px;font-family:var(--mono);}
 .trend-line{fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
 .trend-area{opacity:.15;}
 .trend-dot{cursor:pointer;transition:r .15s;}
 .trend-dot:hover{r:5;}
-.trend-hover-line{stroke:var(--border3);stroke-width:1;stroke-dasharray:2 3;opacity:0;}
+
+@keyframes spin{to{transform:rotate(360deg);}}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.4;}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+@keyframes toastIn{from{opacity:0;transform:translateX(20px);}to{opacity:1;transform:translateX(0);}}
+@keyframes toastOut{to{opacity:0;transform:translateX(20px);}}
+.anim{animation:fadeUp .3s ease both;}
 </style>
 </head>
 <body>
@@ -247,7 +261,7 @@ tbody tr:hover td{background:var(--surface2);}
         </div>
         <div id="login-error" class="error-box" style="display:none;"></div>
         <button class="btn-login" id="btn-login" onclick="doLogin()">
-          <div class="ms-logo">
+          <div style="display:flex;align-items:center;gap:3px;">
             <svg width="16" height="16" viewBox="0 0 16 16">
               <rect x="1" y="1" width="6.5" height="6.5" fill="#f25022"/>
               <rect x="8.5" y="1" width="6.5" height="6.5" fill="#7fba00"/>
@@ -257,16 +271,11 @@ tbody tr:hover td{background:var(--surface2);}
           </div>
           Prijava z Microsoft računom
         </button>
-        <div class="login-note">
-         
-        </div>
       </div>
     </div>
-
     <div id="dashboard" style="display:none;"></div>
   </div>
 </div>
-
 <div class="toast-wrap" id="toast-wrap"></div>
 <div id="modal-root"></div>
 
@@ -283,71 +292,44 @@ let filterPlatform = 'all';
 let filterStatus = 'all';
 let searchQuery = '';
 let sortKey = 'lastSyncDateTime';
-let sortDir = 'desc'; // 'asc' | 'desc'
-let trendRange = '30d'; // '7d' | '30d' | '90d' | '6m' | '1y' | 'custom'
+let sortDir = 'desc';
+let trendRange = '30d';
 let trendCustom = { from: null, to: null };
 let trendPlatform = 'all';
+let activeTab = 'devices'; // 'devices' | 'orgs'
+let orgSearch = '';
+let orgSortKey = 'total';
+let orgSortDir = 'desc';
 
-// ─── MSAL SETUP ──────────────────────────────────────────────────────────
-// Zaznava ali smo v popup oknu (npr. PWA, Edge App, ali odprto preko window.open)
-function isInPopup() {
-  try {
-    return window.opener !== null && window.opener !== window;
-  } catch(e) { return false; }
-}
-
+// ─── MSAL ────────────────────────────────────────────────────────────────
 function initMsal(tenantId, clientId) {
-  const config = {
+  msalInstance = new msal.PublicClientApplication({
     auth: {
-      clientId: clientId,
+      clientId,
       authority: `https://login.microsoftonline.com/${tenantId}`,
       redirectUri: window.location.href.split('?')[0].split('#')[0],
     },
-    cache: {
-      cacheLocation: 'localStorage', // localStorage namesto sessionStorage da preživi redirect
-      storeAuthStateInCookie: false
-    }
-  };
-  msalInstance = new msal.PublicClientApplication(config);
+    cache: { cacheLocation: 'localStorage', storeAuthStateInCookie: false }
+  });
 }
 
 async function doLogin() {
   const tenantId = document.getElementById('cfg-tenant').value.trim() || DEFAULT_TENANT;
   const clientId = document.getElementById('cfg-client').value.trim() || DEFAULT_CLIENT;
   const errEl = document.getElementById('login-error');
-
-  if (!tenantId || !clientId) {
-    errEl.textContent = 'Vnesi Tenant ID in Client ID.';
-    errEl.style.display = 'block';
-    return;
-  }
-
+  if (!tenantId || !clientId) { errEl.textContent = 'Vnesi Tenant ID in Client ID.'; errEl.style.display = 'block'; return; }
   errEl.style.display = 'none';
   const btn = document.getElementById('btn-login');
   btn.disabled = true;
-  btn.innerHTML = '<div class="spinner" style="width:16px;height:16px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;"></div> Preusmerjam na Microsoft prijavo…';
-
+  btn.textContent = 'Preusmerjam…';
   try {
-    // localStorage namesto sessionStorage — preživi redirect
     localStorage.setItem('mdm_tenant', tenantId);
     localStorage.setItem('mdm_client', clientId);
-
-    if (!msalInstance) {
-      initMsal(tenantId, clientId);
-      await msalInstance.initialize();
-    }
-
-    const loginReq = {
-      scopes: ['https://graph.microsoft.com/DeviceManagementManagedDevices.Read.All'],
-      prompt: 'select_account'
-    };
-
-    // VEDNO uporabi redirect — popup ne deluje v popup oknih (PWA, Edge App, ipd.)
-    await msalInstance.loginRedirect(loginReq);
-    // Stran se bo zdaj preusmerila — koda spodaj se ne izvede
+    if (!msalInstance) { initMsal(tenantId, clientId); await msalInstance.initialize(); }
+    await msalInstance.loginRedirect({ scopes: ['https://graph.microsoft.com/DeviceManagementManagedDevices.Read.All'], prompt: 'select_account' });
   } catch(e) {
     btn.disabled = false;
-    btn.innerHTML = '<div class="ms-logo"><svg width="16" height="16" viewBox="0 0 16 16"><rect x="1" y="1" width="6.5" height="6.5" fill="#f25022"/><rect x="8.5" y="1" width="6.5" height="6.5" fill="#7fba00"/><rect x="1" y="8.5" width="6.5" height="6.5" fill="#00a4ef"/><rect x="8.5" y="8.5" width="6.5" height="6.5" fill="#ffb900"/></svg></div> Prijava z Microsoft računom';
+    btn.textContent = 'Prijava z Microsoft računom';
     errEl.textContent = e.message || 'Prijava ni uspela.';
     errEl.style.display = 'block';
   }
@@ -356,7 +338,6 @@ async function doLogin() {
 function afterLogin() {
   document.getElementById('login-screen').style.display = 'none';
   document.getElementById('dashboard').style.display = 'block';
-
   const initials = (account.name || account.username || 'U').split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
   document.getElementById('topbar-right').innerHTML = `
     <div class="live-pill"><div class="live-dot"></div>Živi podatki</div>
@@ -368,16 +349,11 @@ function afterLogin() {
     <button class="btn btn-ghost" onclick="refreshData()">↻ Osveži</button>
     <button class="btn btn-danger" onclick="doLogout()">Odjava</button>
   `;
-
   loadDevices();
 }
 
 async function getToken() {
-  const tokenReq = {
-    scopes: ['https://graph.microsoft.com/DeviceManagementManagedDevices.Read.All'],
-    account: account
-  };
-  const resp = await msalInstance.acquireTokenSilent(tokenReq);
+  const resp = await msalInstance.acquireTokenSilent({ scopes: ['https://graph.microsoft.com/DeviceManagementManagedDevices.Read.All'], account });
   return resp.accessToken;
 }
 
@@ -386,233 +362,202 @@ async function loadDevices() {
   renderLoading();
   try {
     const token = await getToken();
-    const platforms = ['iOS', 'iPadOS', 'Android'];
-    const filter = platforms.map(p => `operatingSystem eq '${p}'`).join(' or ');
+    const filter = ['iOS','iPadOS','Android'].map(p=>`operatingSystem eq '${p}'`).join(' or ');
     const select = 'id,deviceName,operatingSystem,osVersion,complianceState,userPrincipalName,lastSyncDateTime,managedDeviceOwnerType,enrolledDateTime,model,manufacturer,serialNumber,imei,wiFiMacAddress';
-
     let url = `https://graph.microsoft.com/v1.0/deviceManagement/managedDevices?$filter=${encodeURIComponent(filter)}&$select=${select}&$top=999`;
     const devices = [];
-
     while (url) {
-      const res = await fetch(url, { headers: { 'Authorization': `Bearer ${token}` } });
-      if (!res.ok) {
-        const err = await res.json().catch(() => ({}));
-        throw new Error(err.error?.message || `Graph API napaka ${res.status}`);
-      }
+      const res = await fetch(url, { headers: { Authorization: `Bearer ${token}` } });
+      if (!res.ok) { const e = await res.json().catch(()=>({})); throw new Error(e.error?.message || `Graph API ${res.status}`); }
       const data = await res.json();
-      devices.push(...(data.value || []));
+      devices.push(...(data.value||[]));
       url = data['@odata.nextLink'] || null;
     }
-
     allDevices = devices;
     renderDashboard();
     toast(`Naloženih ${devices.length} naprav`, 'ok');
-  } catch(e) {
-    renderError(e.message);
-  }
+  } catch(e) { renderError(e.message); }
 }
 
 async function refreshData() {
-  filterPlatform = 'all';
-  filterStatus = 'all';
-  searchQuery = '';
+  filterPlatform='all'; filterStatus='all'; searchQuery=''; orgSearch='';
   await loadDevices();
 }
 
 async function doLogout() {
-  try {
-    if (msalInstance && account) {
-      // Počisti MSAL cache brez full logout flow-a (da ne pristanemo spet na MS strani)
-      await msalInstance.clearCache();
-    }
-  } catch(e) {}
-  localStorage.removeItem('mdm_tenant');
-  localStorage.removeItem('mdm_client');
-  sessionStorage.clear();
-  window.location.reload();
+  try { if(msalInstance && account) await msalInstance.clearCache(); } catch(e){}
+  localStorage.removeItem('mdm_tenant'); localStorage.removeItem('mdm_client');
+  sessionStorage.clear(); window.location.reload();
 }
 
 // ─── HELPERS ─────────────────────────────────────────────────────────────
 function platformColor(os) {
   if (!os) return '#4a5270';
   const l = os.toLowerCase();
-  if (l === 'ipad' || l === 'ipados') return '#1D9E75';
-  if (l === 'ios') return '#378ADD';
-  if (l === 'android') return '#639922';
+  if (l==='ipados') return '#1D9E75';
+  if (l==='ios') return '#378ADD';
+  if (l==='android') return '#639922';
   return '#4a5270';
 }
-
 function platformEmoji(os) {
   if (!os) return '📱';
   const l = os.toLowerCase();
-  if (l === 'ipados') return '⬜';
-  if (l === 'ios') return '📱';
-  if (l === 'android') return '🤖';
+  if (l==='ipados') return '⬜';
+  if (l==='ios') return '📱';
+  if (l==='android') return '🤖';
   return '📱';
 }
-
 function statusBadge(s) {
-  const m = {
-    compliant:     ['badge-ok', 'Skladna'],
-    noncompliant:  ['badge-nc', 'Neskladna'],
-    inGracePeriod: ['badge-gp', 'Grace'],
-    unknown:       ['badge-uk', 'Neznano'],
-    configManager: ['badge-uk', 'Config Mgr'],
-  };
-  const [cls, label] = m[s] || m.unknown;
+  const m = { compliant:['badge-ok','Skladna'], noncompliant:['badge-nc','Neskladna'], inGracePeriod:['badge-gp','Grace'], unknown:['badge-uk','Neznano'], configManager:['badge-uk','Config Mgr'] };
+  const [cls, label] = m[s]||m.unknown;
   return `<span class="badge ${cls}">${label}</span>`;
 }
+function fmtDate(iso) { if(!iso) return '—'; return new Date(iso).toLocaleDateString('sl-SI',{day:'2-digit',month:'2-digit',year:'numeric'}); }
+function fmtDateShort(d) { return d.toLocaleDateString('sl-SI',{day:'2-digit',month:'2-digit'}); }
+function fmtDateISO(d) { return d.toISOString().slice(0,10); }
+function timeSince(iso) { if(!iso) return '—'; const diff=Date.now()-new Date(iso).getTime(); const days=Math.floor(diff/86400000); if(days===0) return 'danes'; if(days===1) return 'včeraj'; return `${days}d nazaj`; }
+function daysSince(iso) { if(!iso) return null; return Math.floor((Date.now()-new Date(iso).getTime())/86400000); }
+function toast(msg, type='ok') { const wrap=document.getElementById('toast-wrap'); const el=document.createElement('div'); el.className=`toast ${type==='err'?'err':type==='warn'?'warn':''}`; el.textContent=msg; wrap.appendChild(el); setTimeout(()=>el.remove(),2900); }
+function copyToClipboard(text, label) { navigator.clipboard.writeText(text).then(()=>toast(`Kopirano: ${label}`,'ok')).catch(()=>toast('Kopiranje ni uspelo','err')); }
+function escapeHtml(s) { if(s==null) return ''; return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function escapeAttr(s) { return escapeHtml(s); }
 
-function fmtDate(iso) {
-  if (!iso) return '—';
-  return new Date(iso).toLocaleDateString('sl-SI', { day:'2-digit', month:'2-digit', year:'numeric' });
+// ─── ORG / DOMAIN HELPERS ────────────────────────────────────────────────
+function getUpnDomain(upn) {
+  if (!upn) return null;
+  const at = upn.lastIndexOf('@');
+  if (at < 0) return null;
+  return upn.slice(at + 1).toLowerCase();
 }
 
-function fmtDateShort(d) {
-  return d.toLocaleDateString('sl-SI', { day:'2-digit', month:'2-digit' });
+function getDomainLabel(domain) {
+  // Split domain into parts for visual display: e.g. "dem.si" → base "dem", tld ".si"
+  const parts = domain.split('.');
+  if (parts.length >= 2) {
+    return { base: parts.slice(0, -1).join('.'), tld: '.' + parts[parts.length-1] };
+  }
+  return { base: domain, tld: '' };
 }
 
-function fmtDateISO(d) {
-  return d.toISOString().slice(0,10);
+// Generate a deterministic color for a domain string
+function domainColor(domain) {
+  const palette = ['#378ADD','#1D9E75','#7F77DD','#BA7517','#E24B4A','#5DCAA5','#639922','#9B59B6','#E67E22','#1ABC9C'];
+  let hash = 0;
+  for (let i=0; i<domain.length; i++) hash = (hash*31 + domain.charCodeAt(i)) >>> 0;
+  return palette[hash % palette.length];
 }
 
-function timeSince(iso) {
-  if (!iso) return '—';
-  const diff = Date.now() - new Date(iso).getTime();
-  const days = Math.floor(diff / 86400000);
-  if (days === 0) return 'danes';
-  if (days === 1) return 'včeraj';
-  return `${days}d nazaj`;
+function computeOrgGroups() {
+  const map = new Map(); // domain → { devices[], platforms:{}, compliance:{} }
+
+  allDevices.forEach(d => {
+    const domain = getUpnDomain(d.userPrincipalName) || '__shared__';
+    if (!map.has(domain)) {
+      map.set(domain, {
+        domain,
+        devices: [],
+        platforms: { iOS:0, iPadOS:0, Android:0 },
+        compliance: { compliant:0, noncompliant:0, inGracePeriod:0, unknown:0 }
+      });
+    }
+    const g = map.get(domain);
+    g.devices.push(d);
+    if (d.operatingSystem && g.platforms[d.operatingSystem] !== undefined) g.platforms[d.operatingSystem]++;
+    const cs = d.complianceState || 'unknown';
+    if (g.compliance[cs] !== undefined) g.compliance[cs]++;
+    else g.compliance.unknown++;
+  });
+
+  // Sort groups per current org sort
+  let groups = [...map.values()];
+  groups.sort((a, b) => {
+    let av, bv;
+    if (orgSortKey === 'total') { av = a.devices.length; bv = b.devices.length; }
+    else if (orgSortKey === 'domain') { av = a.domain; bv = b.domain; }
+    else if (orgSortKey === 'compliant') { av = a.devices.length ? a.compliance.compliant/a.devices.length : 0; bv = b.devices.length ? b.compliance.compliant/b.devices.length : 0; }
+    else if (orgSortKey === 'noncompliant') { av = a.compliance.noncompliant; bv = b.compliance.noncompliant; }
+    else { av = a.devices.length; bv = b.devices.length; }
+    if (typeof av === 'string') { return orgSortDir==='asc' ? av.localeCompare(bv) : bv.localeCompare(av); }
+    return orgSortDir==='asc' ? av-bv : bv-av;
+  });
+
+  // Filter by search
+  if (orgSearch) {
+    const q = orgSearch.toLowerCase();
+    groups = groups.filter(g => g.domain.includes(q));
+  }
+
+  return groups;
 }
 
-function daysSince(iso) {
-  if (!iso) return null;
-  return Math.floor((Date.now() - new Date(iso).getTime()) / 86400000);
-}
-
-function toast(msg, type = 'ok') {
-  const wrap = document.getElementById('toast-wrap');
-  const el = document.createElement('div');
-  el.className = `toast ${type === 'err' ? 'err' : type === 'warn' ? 'warn' : ''}`;
-  el.textContent = msg;
-  wrap.appendChild(el);
-  setTimeout(() => el.remove(), 2900);
-}
-
-function copyToClipboard(text, label) {
-  navigator.clipboard.writeText(text).then(() => {
-    toast(`Kopirano: ${label}`, 'ok');
-  }).catch(() => toast('Kopiranje ni uspelo', 'err'));
-}
-
-// ─── TREND CALCULATIONS ──────────────────────────────────────────────────
+// ─── TREND ───────────────────────────────────────────────────────────────
 function getTrendDateRange() {
-  const now = new Date();
-  now.setHours(23, 59, 59, 999);
-  let from, to = new Date(now);
-  let days = 30;
-
-  if (trendRange === 'custom' && trendCustom.from && trendCustom.to) {
-    from = new Date(trendCustom.from);
-    from.setHours(0, 0, 0, 0);
-    to = new Date(trendCustom.to);
-    to.setHours(23, 59, 59, 999);
-    days = Math.max(1, Math.ceil((to - from) / 86400000) + 1);
+  const now = new Date(); now.setHours(23,59,59,999);
+  let from, to = new Date(now), days = 30;
+  if (trendRange==='custom' && trendCustom.from && trendCustom.to) {
+    from = new Date(trendCustom.from); from.setHours(0,0,0,0);
+    to = new Date(trendCustom.to); to.setHours(23,59,59,999);
+    days = Math.max(1, Math.ceil((to-from)/86400000)+1);
   } else {
-    const ranges = { '7d': 7, '30d': 30, '90d': 90, '6m': 180, '1y': 365 };
-    days = ranges[trendRange] || 30;
-    from = new Date(now);
-    from.setDate(from.getDate() - days + 1);
-    from.setHours(0, 0, 0, 0);
+    const ranges={'7d':7,'30d':30,'90d':90,'6m':180,'1y':365};
+    days = ranges[trendRange]||30;
+    from = new Date(now); from.setDate(from.getDate()-days+1); from.setHours(0,0,0,0);
   }
   return { from, to, days };
 }
 
 function computeTrendData() {
   const { from, to, days } = getTrendDateRange();
-  const bucketCount = days;
-
   const filtered = allDevices.filter(d => {
     if (!d.enrolledDateTime) return false;
-    if (trendPlatform !== 'all' && d.operatingSystem !== trendPlatform) return false;
+    if (trendPlatform!=='all' && d.operatingSystem!==trendPlatform) return false;
     return true;
   });
-
-  // Buckets: one per day
-  const buckets = new Array(bucketCount).fill(0);
+  const buckets = new Array(days).fill(0);
   const labels = [];
-  for (let i = 0; i < bucketCount; i++) {
-    const d = new Date(from);
-    d.setDate(from.getDate() + i);
-    labels.push(d);
-  }
-
+  for (let i=0; i<days; i++) { const d=new Date(from); d.setDate(from.getDate()+i); labels.push(d); }
   filtered.forEach(dev => {
     const en = new Date(dev.enrolledDateTime);
-    if (en < from || en > to) return;
-    const idx = Math.floor((en - from) / 86400000);
-    if (idx >= 0 && idx < bucketCount) buckets[idx]++;
+    if (en<from||en>to) return;
+    const idx = Math.floor((en-from)/86400000);
+    if (idx>=0&&idx<days) buckets[idx]++;
   });
-
   return { buckets, labels, from, to, days, total: buckets.reduce((a,b)=>a+b,0) };
 }
 
 // ─── RENDERS ─────────────────────────────────────────────────────────────
 function renderLoading() {
-  document.getElementById('dashboard').innerHTML = `
-    <div class="loading-wrap">
-      <div class="spinner"></div>
-      <div class="loading-text">Nalagam mobilne naprave iz Intune…</div>
-    </div>`;
+  document.getElementById('dashboard').innerHTML = `<div class="loading-wrap"><div class="spinner"></div><div class="loading-text">Nalagam mobilne naprave iz Intune…</div></div>`;
 }
-
 function renderError(msg) {
-  document.getElementById('dashboard').innerHTML = `
-    <div class="error-box" style="max-width:520px;margin:40px auto;">
-      <strong>Napaka:</strong> ${msg}
-      <br/><br/>
-      <button class="btn btn-ghost" onclick="loadDevices()">Poskusi znova</button>
-    </div>`;
+  document.getElementById('dashboard').innerHTML = `<div class="error-box" style="max-width:520px;margin:40px auto;"><strong>Napaka:</strong> ${msg}<br/><br/><button class="btn btn-ghost" onclick="loadDevices()">Poskusi znova</button></div>`;
 }
 
 function renderDashboard() {
-  const platforms = ['iOS', 'iPadOS', 'Android'];
-  const byPlat = {};
-  platforms.forEach(p => { byPlat[p] = allDevices.filter(d => d.operatingSystem === p).length; });
-
-  const compliant = allDevices.filter(d => d.complianceState === 'compliant').length;
-  const nonCompliant = allDevices.filter(d => d.complianceState === 'noncompliant').length;
-  const grace = allDevices.filter(d => d.complianceState === 'inGracePeriod').length;
+  const platforms = ['iOS','iPadOS','Android'];
+  const byPlat = {}; platforms.forEach(p=>{ byPlat[p]=allDevices.filter(d=>d.operatingSystem===p).length; });
+  const compliant = allDevices.filter(d=>d.complianceState==='compliant').length;
+  const nonCompliant = allDevices.filter(d=>d.complianceState==='noncompliant').length;
+  const grace = allDevices.filter(d=>d.complianceState==='inGracePeriod').length;
   const total = allDevices.length;
-  const pct = total ? Math.round(compliant / total * 100) : 0;
-  const staleCount = allDevices.filter(d => {
-    const dz = daysSince(d.lastSyncDateTime);
-    return dz !== null && dz > 30;
-  }).length;
+  const pct = total ? Math.round(compliant/total*100) : 0;
+  const staleCount = allDevices.filter(d=>{ const dz=daysSince(d.lastSyncDateTime); return dz!==null&&dz>30; }).length;
+  const orgCount = new Set(allDevices.map(d=>getUpnDomain(d.userPrincipalName)||'__shared__')).size;
 
-  // Filter + search + sort
   const filtered = allDevices.filter(d => {
-    const mp = filterPlatform === 'all' || d.operatingSystem === filterPlatform;
-    const ms = filterStatus === 'all' || d.complianceState === filterStatus;
+    const mp = filterPlatform==='all'||d.operatingSystem===filterPlatform;
+    const ms = filterStatus==='all'||d.complianceState===filterStatus;
     const q = searchQuery.toLowerCase();
-    const matchQ = !q || (d.deviceName||'').toLowerCase().includes(q)
-                    || (d.userPrincipalName||'').toLowerCase().includes(q)
-                    || (d.model||'').toLowerCase().includes(q);
-    return mp && ms && matchQ;
+    const matchQ = !q||(d.deviceName||'').toLowerCase().includes(q)||(d.userPrincipalName||'').toLowerCase().includes(q)||(d.model||'').toLowerCase().includes(q);
+    return mp&&ms&&matchQ;
   });
 
-  // Sort
-  filtered.sort((a, b) => {
-    let av = a[sortKey], bv = b[sortKey];
-    if (sortKey === 'lastSyncDateTime' || sortKey === 'enrolledDateTime') {
-      av = av ? new Date(av).getTime() : 0;
-      bv = bv ? new Date(bv).getTime() : 0;
-    } else {
-      av = (av || '').toString().toLowerCase();
-      bv = (bv || '').toString().toLowerCase();
-    }
-    if (av < bv) return sortDir === 'asc' ? -1 : 1;
-    if (av > bv) return sortDir === 'asc' ? 1 : -1;
+  filtered.sort((a,b)=>{
+    let av=a[sortKey], bv=b[sortKey];
+    if (sortKey==='lastSyncDateTime'||sortKey==='enrolledDateTime') { av=av?new Date(av).getTime():0; bv=bv?new Date(bv).getTime():0; }
+    else { av=(av||'').toString().toLowerCase(); bv=(bv||'').toString().toLowerCase(); }
+    if (av<bv) return sortDir==='asc'?-1:1;
+    if (av>bv) return sortDir==='asc'?1:-1;
     return 0;
   });
 
@@ -627,126 +572,53 @@ function renderDashboard() {
       </div>
     </div>
 
+    <!-- TABS -->
+    <div class="tab-bar">
+      <button class="tab-btn ${activeTab==='devices'?'active':''}" onclick="switchTab('devices')">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        Naprave
+        <span class="tab-count">${total}</span>
+      </button>
+      <button class="tab-btn ${activeTab==='orgs'?'active':''}" onclick="switchTab('orgs')">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Po organizacijah
+        <span class="tab-count">${orgCount}</span>
+      </button>
+    </div>
+
+    <!-- KPI cards (always visible) -->
     <div class="kpi-grid">
-      ${kpiCard('Skupaj mobilnih', total, 'iOS + iPadOS + Android', '#378ADD', () => { filterPlatform='all'; filterStatus='all'; renderDashboard(); })}
-      ${kpiCard('iOS', byPlat['iOS'] || 0, 'iPhone naprave', '#378ADD', () => { filterPlatform='iOS'; renderDashboard(); })}
-      ${kpiCard('iPadOS', byPlat['iPadOS'] || 0, 'iPad naprave', '#1D9E75', () => { filterPlatform='iPadOS'; renderDashboard(); })}
-      ${kpiCard('Android', byPlat['Android'] || 0, 'Android naprave', '#639922', () => { filterPlatform='Android'; renderDashboard(); })}
-      ${kpiCard('Skladne', compliant, pct + '% vseh naprav', '#1D9E75', () => { filterStatus='compliant'; renderDashboard(); })}
-      ${kpiCard('Neskladne', nonCompliant, 'zahteva pozornost', '#E24B4A', () => { filterStatus='noncompliant'; renderDashboard(); })}
-      ${kpiCard('Brez sync >30d', staleCount, 'preveri stanje', '#BA7517', () => { showStaleModal(); })}
+      ${kpiCard('Skupaj mobilnih', total, 'iOS + iPadOS + Android','#378ADD',()=>{ filterPlatform='all';filterStatus='all';activeTab='devices';renderDashboard(); })}
+      ${kpiCard('iOS', byPlat['iOS']||0, 'iPhone naprave','#378ADD',()=>{ filterPlatform='iOS';activeTab='devices';renderDashboard(); })}
+      ${kpiCard('iPadOS', byPlat['iPadOS']||0, 'iPad naprave','#1D9E75',()=>{ filterPlatform='iPadOS';activeTab='devices';renderDashboard(); })}
+      ${kpiCard('Android', byPlat['Android']||0, 'Android naprave','#639922',()=>{ filterPlatform='Android';activeTab='devices';renderDashboard(); })}
+      ${kpiCard('Skladne', compliant, pct+'% vseh naprav','#1D9E75',()=>{ filterStatus='compliant';activeTab='devices';renderDashboard(); })}
+      ${kpiCard('Neskladne', nonCompliant, 'zahteva pozornost','#E24B4A',()=>{ filterStatus='noncompliant';activeTab='devices';renderDashboard(); })}
+      ${kpiCard('Brez sync >30d', staleCount, 'preveri stanje','#BA7517',()=>{ showStaleModal(); })}
     </div>
 
-    ${renderTrendChart()}
-
-    <div class="kpi-grid" style="grid-template-columns:1fr 1fr;margin-bottom:18px;">
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);padding:16px 18px;">
-        <div style="font-size:10px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.09em;margin-bottom:10px;">Porazdelitev platform</div>
-        <div class="platform-bars">
-          ${platforms.map(p => `
-            <div class="pbar-row">
-              <div class="pbar-label" style="color:${platformColor(p)}">${p}</div>
-              <div class="pbar-track"><div class="pbar-fill" style="width:${total ? Math.round((byPlat[p]||0)/total*100) : 0}%;background:${platformColor(p)}"></div></div>
-              <div class="pbar-count">${byPlat[p] || 0}</div>
-            </div>`).join('')}
-        </div>
-      </div>
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);padding:16px 18px;">
-        <div style="font-size:10px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.09em;margin-bottom:10px;">Stanje skladnosti</div>
-        <div class="platform-bars">
-          ${[
-            {label:'Skladne', val:compliant, color:'#1D9E75'},
-            {label:'Neskladne', val:nonCompliant, color:'#E24B4A'},
-            {label:'Grace', val:grace, color:'#BA7517'},
-            {label:'Neznano', val:total-compliant-nonCompliant-grace, color:'#4a5270'},
-          ].map(r => `
-            <div class="pbar-row">
-              <div class="pbar-label" style="color:${r.color}">${r.label}</div>
-              <div class="pbar-track"><div class="pbar-fill" style="width:${total ? Math.round(r.val/total*100) : 0}%;background:${r.color}"></div></div>
-              <div class="pbar-count">${r.val}</div>
-            </div>`).join('')}
-        </div>
-      </div>
-    </div>
-
-    <div class="filter-wrap">
-      <span class="filter-label">Platforma:</span>
-      ${['all','iOS','iPadOS','Android'].map(p =>
-        `<button class="f-btn${filterPlatform===p?' active':''}" onclick="setFilter('plat','${p}')">${p==='all'?'Vse':p}</button>`
-      ).join('')}
-      <span class="sep">|</span>
-      <span class="filter-label">Status:</span>
-      ${[
-        ['all','Vse'],['compliant','Skladne'],['noncompliant','Neskladne'],['inGracePeriod','Grace'],['unknown','Neznano']
-      ].map(([v,l]) =>
-        `<button class="f-btn${filterStatus===v?' active':''}" onclick="setFilter('status','${v}')">${l}</button>`
-      ).join('')}
-      <div class="search-wrap">
-        <svg class="search-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-        <input class="search-input" id="search-input" type="text" placeholder="Išči ime, uporabnik, model…" value="${escapeAttr(searchQuery)}" oninput="onSearch(this.value)"/>
-      </div>
-      <span class="count-badge">${filtered.length} naprav</span>
-    </div>
-
-    <div class="table-card">
-      ${filtered.length === 0
-        ? `<div class="empty-wrap"><div class="empty-text">Ni naprav za ta filter.</div></div>`
-        : `<div class="tbl-wrap"><table>
-          <thead><tr>
-            ${sortableTh('Naprava', 'deviceName')}
-            ${sortableTh('OS', 'operatingSystem')}
-            ${sortableTh('Model', 'model')}
-            ${sortableTh('Skladnost', 'complianceState')}
-            ${sortableTh('Lastnik', 'managedDeviceOwnerType')}
-            ${sortableTh('Zadnja sinhronizacija', 'lastSyncDateTime')}
-            ${sortableTh('Registrirana', 'enrolledDateTime')}
-          </tr></thead>
-          <tbody>
-            ${filtered.map(d => {
-              const color = platformColor(d.operatingSystem);
-              const stale = daysSince(d.lastSyncDateTime);
-              const isStale = stale !== null && stale > 30;
-              return `<tr>
-                <td>
-                  <div class="dev-cell">
-                    <div class="dev-icon" style="background:${color}22;">${platformEmoji(d.operatingSystem)}</div>
-                    <div>
-                      <div class="dev-name" onclick='showDeviceModal(${JSON.stringify(d.id)})' title="Klikni za podrobnosti">${escapeHtml(d.deviceName || '—')}</div>
-                      <div class="dev-user" onclick='copyToClipboard(${JSON.stringify(d.userPrincipalName||"")}, "UPN")' title="Klikni za kopiranje">${escapeHtml(d.userPrincipalName || 'Shared device')}</div>
-                    </div>
-                  </div>
-                </td>
-                <td><span class="os-chip" style="background:${color}18;color:${color};">${escapeHtml(d.operatingSystem || '—')} ${escapeHtml(d.osVersion || '')}</span></td>
-                <td style="color:var(--text2);font-size:12px;">${escapeHtml(d.model || '—')}</td>
-                <td>${statusBadge(d.complianceState)}</td>
-                <td style="color:var(--text3);font-size:12px;">${escapeHtml(d.managedDeviceOwnerType || '—')}</td>
-                <td style="font-family:var(--mono);font-size:12px;color:var(--text2);">
-                  ${timeSince(d.lastSyncDateTime)}
-                  ${isStale ? `<span class="badge badge-stale">⚠ ${stale}d</span>` : ''}
-                </td>
-                <td style="font-family:var(--mono);font-size:12px;color:var(--text3);">${fmtDate(d.enrolledDateTime)}</td>
-              </tr>`;
-            }).join('')}
-          </tbody>
-        </table></div>`
-      }
-    </div>
+    ${activeTab === 'devices' ? renderDevicesTab(filtered, total, byPlat, compliant, nonCompliant, grace) : renderOrgsTab()}
   </div>`;
 
-  // Draw chart after DOM is ready
-  setTimeout(() => drawTrendChart(), 0);
+  setTimeout(() => { if(activeTab==='devices') drawTrendChart(); }, 0);
 }
 
-function renderTrendChart() {
+function switchTab(tab) {
+  activeTab = tab;
+  renderDashboard();
+}
+
+// ─── DEVICES TAB ─────────────────────────────────────────────────────────
+function renderDevicesTab(filtered, total, byPlat, compliant, nonCompliant, grace) {
+  const platforms = ['iOS','iPadOS','Android'];
   const { from, to, days } = getTrendDateRange();
   const data = computeTrendData();
   const peakIdx = data.buckets.indexOf(Math.max(...data.buckets));
   const peakDate = data.labels[peakIdx];
-  const avg = data.buckets.length ? (data.total / data.buckets.length) : 0;
-
-  const customActive = trendRange === 'custom';
-  const customFrom = trendCustom.from || fmtDateISO(from);
-  const customTo = trendCustom.to || fmtDateISO(to);
+  const avg = data.buckets.length ? (data.total/data.buckets.length) : 0;
+  const customActive = trendRange==='custom';
+  const customFrom = trendCustom.from||fmtDateISO(from);
+  const customTo = trendCustom.to||fmtDateISO(to);
 
   return `
     <div class="chart-card">
@@ -756,161 +628,306 @@ function renderTrendChart() {
           <div class="chart-sub">${fmtDate(from)} → ${fmtDate(to)} · ${days} dni</div>
         </div>
         <div class="chart-stats">
-          <div>
-            <div class="chart-stat-label">Skupaj v obdobju</div>
-            <div class="chart-stat-val" style="color:#85B7EB;">${data.total}</div>
-          </div>
-          <div>
-            <div class="chart-stat-label">Povp. / dan</div>
-            <div class="chart-stat-val">${avg.toFixed(1)}</div>
-          </div>
-          <div>
-            <div class="chart-stat-label">Vrh</div>
-            <div class="chart-stat-val">${data.buckets[peakIdx] || 0} <span style="font-size:11px;color:var(--text3);font-weight:normal;">${data.total > 0 ? '· ' + fmtDateShort(peakDate) : ''}</span></div>
-          </div>
+          <div><div class="chart-stat-label">Skupaj v obdobju</div><div class="chart-stat-val" style="color:#85B7EB;">${data.total}</div></div>
+          <div><div class="chart-stat-label">Povp. / dan</div><div class="chart-stat-val">${avg.toFixed(1)}</div></div>
+          <div><div class="chart-stat-label">Vrh</div><div class="chart-stat-val">${data.buckets[peakIdx]||0} <span style="font-size:11px;color:var(--text3);font-weight:normal;">${data.total>0?'· '+fmtDateShort(peakDate):''}</span></div></div>
         </div>
       </div>
-
       <div class="chart-controls">
         <span class="filter-label">Obdobje:</span>
-        ${[['7d','7 dni'],['30d','30 dni'],['90d','3 mes'],['6m','6 mes'],['1y','1 leto'],['custom','Po meri']].map(([v,l]) =>
-          `<button class="f-btn${trendRange===v?' active':''}" onclick="setTrendRange('${v}')">${l}</button>`
-        ).join('')}
-        ${customActive ? `
-          <div class="date-picker-wrap">
-            <input type="date" class="date-input" id="trend-from" value="${customFrom}" onchange="setTrendCustom('from', this.value)"/>
-            <span style="color:var(--text3);font-size:11px;">→</span>
-            <input type="date" class="date-input" id="trend-to" value="${customTo}" onchange="setTrendCustom('to', this.value)"/>
-          </div>` : ''}
+        ${[['7d','7 dni'],['30d','30 dni'],['90d','3 mes'],['6m','6 mes'],['1y','1 leto'],['custom','Po meri']].map(([v,l])=>`<button class="f-btn${trendRange===v?' active':''}" onclick="setTrendRange('${v}')">${l}</button>`).join('')}
+        ${customActive?`<div style="display:flex;align-items:center;gap:4px;"><input type="date" class="date-input" id="trend-from" value="${customFrom}" onchange="setTrendCustom('from',this.value)"/><span style="color:var(--text3);font-size:11px;">→</span><input type="date" class="date-input" id="trend-to" value="${customTo}" onchange="setTrendCustom('to',this.value)"/></div>`:''}
         <span class="sep">|</span>
         <span class="filter-label">Platforma:</span>
-        ${[['all','Vse'],['iOS','iOS'],['iPadOS','iPadOS'],['Android','Android']].map(([v,l]) =>
-          `<button class="f-btn${trendPlatform===v?' active':''}" onclick="setTrendPlatform('${v}')">${l}</button>`
-        ).join('')}
+        ${[['all','Vse'],['iOS','iOS'],['iPadOS','iPadOS'],['Android','Android']].map(([v,l])=>`<button class="f-btn${trendPlatform===v?' active':''}" onclick="setTrendPlatform('${v}')">${l}</button>`).join('')}
       </div>
-
       <div class="chart-svg-wrap">
         <svg id="trend-svg" viewBox="0 0 800 240" preserveAspectRatio="none"></svg>
         <div class="chart-tooltip" id="trend-tooltip"></div>
       </div>
     </div>
-  `;
+
+    <div class="kpi-grid" style="grid-template-columns:1fr 1fr;margin-bottom:18px;">
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);padding:16px 18px;">
+        <div style="font-size:10px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.09em;margin-bottom:10px;">Porazdelitev platform</div>
+        <div class="platform-bars">
+          ${platforms.map(p=>`<div class="pbar-row"><div class="pbar-label" style="color:${platformColor(p)}">${p}</div><div class="pbar-track"><div class="pbar-fill" style="width:${total?Math.round((byPlat[p]||0)/total*100):0}%;background:${platformColor(p)}"></div></div><div class="pbar-count">${byPlat[p]||0}</div></div>`).join('')}
+        </div>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);padding:16px 18px;">
+        <div style="font-size:10px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.09em;margin-bottom:10px;">Stanje skladnosti</div>
+        <div class="platform-bars">
+          ${[{label:'Skladne',val:compliant,color:'#1D9E75'},{label:'Neskladne',val:nonCompliant,color:'#E24B4A'},{label:'Grace',val:grace,color:'#BA7517'},{label:'Neznano',val:total-compliant-nonCompliant-grace,color:'#4a5270'}].map(r=>`<div class="pbar-row"><div class="pbar-label" style="color:${r.color}">${r.label}</div><div class="pbar-track"><div class="pbar-fill" style="width:${total?Math.round(r.val/total*100):0}%;background:${r.color}"></div></div><div class="pbar-count">${r.val}</div></div>`).join('')}
+        </div>
+      </div>
+    </div>
+
+    <div class="filter-wrap">
+      <span class="filter-label">Platforma:</span>
+      ${['all','iOS','iPadOS','Android'].map(p=>`<button class="f-btn${filterPlatform===p?' active':''}" onclick="setFilter('plat','${p}')">${p==='all'?'Vse':p}</button>`).join('')}
+      <span class="sep">|</span>
+      <span class="filter-label">Status:</span>
+      ${[['all','Vse'],['compliant','Skladne'],['noncompliant','Neskladne'],['inGracePeriod','Grace'],['unknown','Neznano']].map(([v,l])=>`<button class="f-btn${filterStatus===v?' active':''}" onclick="setFilter('status','${v}')">${l}</button>`).join('')}
+      <div class="search-wrap">
+        <svg class="search-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input class="search-input" id="search-input" type="text" placeholder="Išči ime, uporabnik, model…" value="${escapeAttr(searchQuery)}" oninput="onSearch(this.value)"/>
+      </div>
+      <span class="count-badge">${filtered.length} naprav</span>
+    </div>
+
+    <div class="table-card">
+      ${filtered.length===0
+        ? `<div class="empty-wrap"><div class="empty-text">Ni naprav za ta filter.</div></div>`
+        : `<div class="tbl-wrap"><table>
+          <thead><tr>
+            ${sortableTh('Naprava','deviceName')}
+            ${sortableTh('OS','operatingSystem')}
+            ${sortableTh('Model','model')}
+            ${sortableTh('Skladnost','complianceState')}
+            ${sortableTh('Lastnik','managedDeviceOwnerType')}
+            ${sortableTh('Zadnja sinhronizacija','lastSyncDateTime')}
+            ${sortableTh('Registrirana','enrolledDateTime')}
+          </tr></thead>
+          <tbody>
+            ${filtered.map(d => {
+              const color = platformColor(d.operatingSystem);
+              const stale = daysSince(d.lastSyncDateTime);
+              const isStale = stale!==null&&stale>30;
+              return `<tr>
+                <td><div class="dev-cell">
+                  <div class="dev-icon" style="background:${color}22;">${platformEmoji(d.operatingSystem)}</div>
+                  <div>
+                    <div class="dev-name" onclick='showDeviceModal(${JSON.stringify(d.id)})' title="Klikni za podrobnosti">${escapeHtml(d.deviceName||'—')}</div>
+                    <div class="dev-user" onclick='copyToClipboard(${JSON.stringify(d.userPrincipalName||"")},"UPN")' title="Klikni za kopiranje">${escapeHtml(d.userPrincipalName||'Shared device')}</div>
+                  </div>
+                </div></td>
+                <td><span class="os-chip" style="background:${color}18;color:${color};">${escapeHtml(d.operatingSystem||'—')} ${escapeHtml(d.osVersion||'')}</span></td>
+                <td style="color:var(--text2);font-size:12px;">${escapeHtml(d.model||'—')}</td>
+                <td>${statusBadge(d.complianceState)}</td>
+                <td style="color:var(--text3);font-size:12px;">${escapeHtml(d.managedDeviceOwnerType||'—')}</td>
+                <td style="font-family:var(--mono);font-size:12px;color:var(--text2);">${timeSince(d.lastSyncDateTime)}${isStale?`<span class="badge badge-stale">⚠ ${stale}d</span>`:''}</td>
+                <td style="font-family:var(--mono);font-size:12px;color:var(--text3);">${fmtDate(d.enrolledDateTime)}</td>
+              </tr>`;
+            }).join('')}
+          </tbody>
+        </table></div>`
+      }
+    </div>`;
 }
 
+// ─── ORGS TAB ─────────────────────────────────────────────────────────────
+function renderOrgsTab() {
+  const groups = computeOrgGroups();
+  const totalDevices = allDevices.length;
+
+  return `
+    <div class="org-search-wrap">
+      <div class="search-wrap" style="max-width:320px;">
+        <svg class="search-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input class="search-input" id="org-search-input" type="text" placeholder="Filtriraj po domeni (@dem.si)…" value="${escapeAttr(orgSearch)}" oninput="onOrgSearch(this.value)"/>
+      </div>
+      <div class="org-sort-wrap">
+        <span class="filter-label">Razvrsti:</span>
+        ${[['total','Naprave'],['compliant','% skladnost'],['noncompliant','Neskladne'],['domain','Domena']].map(([v,l])=>
+          `<button class="f-btn${orgSortKey===v?' active':''}" onclick="setOrgSort('${v}')">${l}${orgSortKey===v?(' '+(orgSortDir==='desc'?'↓':'↑')):''}</button>`
+        ).join('')}
+      </div>
+      <span class="count-badge">${groups.length} organizacij · ${totalDevices} naprav</span>
+    </div>
+
+    <div class="table-card">
+      ${groups.length===0
+        ? `<div class="empty-wrap"><div class="empty-text">Ni organizacij za ta filter.</div></div>`
+        : `<div class="tbl-wrap"><table>
+          <thead><tr>
+            <th>Organizacija / Domena</th>
+            <th style="text-align:right;">Naprave</th>
+            <th>Platforme</th>
+            <th>Skladnost</th>
+            <th style="min-width:120px;">% skladnosti</th>
+            <th></th>
+          </tr></thead>
+          <tbody>
+            ${groups.map(g => {
+              const isShared = g.domain === '__shared__';
+              const displayDomain = isShared ? 'Shared / brez UPN' : g.domain;
+              const { base, tld } = isShared ? { base:'shared', tld:'' } : getDomainLabel(g.domain);
+              const color = isShared ? '#4a5270' : domainColor(g.domain);
+              const initials = base.slice(0,2).toUpperCase();
+              const total = g.devices.length;
+              const pct = total ? Math.round(g.compliance.compliant/total*100) : 0;
+              const barColor = pct>=90?'#1D9E75':pct>=60?'#BA7517':'#E24B4A';
+              const sharePct = totalDevices ? Math.round(total/totalDevices*100) : 0;
+
+              return `<tr class="${isShared?'shared-row':''}">
+                <td>
+                  <div class="domain-chip">
+                    <div class="domain-avatar" style="background:${color}22;color:${color};">${initials}</div>
+                    <div>
+                      <div class="domain-name">${isShared?'<span style="color:var(--text3)">Shared / brez UPN</span>':`<span>${escapeHtml(base)}</span><span class="domain-tld">${escapeHtml(tld)}</span>`}</div>
+                      <div style="font-size:10px;color:var(--text3);margin-top:1px;">${sharePct}% vseh naprav</div>
+                    </div>
+                  </div>
+                </td>
+                <td style="text-align:right;font-family:var(--mono);font-size:15px;font-weight:600;color:${color};">${total}</td>
+                <td>
+                  <div class="plat-mini">
+                    ${['iOS','iPadOS','Android'].filter(p=>g.platforms[p]>0).map(p=>`<span class="plat-pip" style="background:${platformColor(p)}18;color:${platformColor(p)};">${platformEmoji(p)} ${g.platforms[p]}</span>`).join('')}
+                  </div>
+                </td>
+                <td>
+                  <div style="display:flex;flex-direction:column;gap:2px;">
+                    ${g.compliance.noncompliant>0?`<span class="badge badge-nc" style="font-size:10px;padding:2px 7px;">✗ ${g.compliance.noncompliant} neskladnih</span>`:''}
+                    ${g.compliance.compliant>0?`<span class="badge badge-ok" style="font-size:10px;padding:2px 7px;">✓ ${g.compliance.compliant} skladnih</span>`:''}
+                    ${g.compliance.inGracePeriod>0?`<span class="badge badge-gp" style="font-size:10px;padding:2px 7px;">⏳ ${g.compliance.inGracePeriod} grace</span>`:''}
+                  </div>
+                </td>
+                <td>
+                  <div class="compliance-bar-wrap">
+                    <div class="compliance-bar-track">
+                      <div class="compliance-bar-fill" style="width:${pct}%;background:${barColor};"></div>
+                    </div>
+                    <div class="compliance-pct" style="color:${barColor};">${pct}%</div>
+                  </div>
+                </td>
+                <td>
+                  <button class="org-drill-btn" onclick="drillDownOrg(${JSON.stringify(g.domain)})">
+                    Pokaži naprave →
+                  </button>
+                </td>
+              </tr>`;
+            }).join('')}
+          </tbody>
+        </table></div>`
+      }
+    </div>
+
+    <div style="margin-top:16px;padding:14px 18px;background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);">
+      <div style="font-size:10px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.09em;margin-bottom:12px;">Porazdelitev naprav po organizacijah</div>
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        ${computeOrgGroups().slice(0,15).map(g => {
+          const isShared = g.domain==='__shared__';
+          const color = isShared?'#4a5270':domainColor(g.domain);
+          const sharePct = totalDevices ? (g.devices.length/totalDevices*100) : 0;
+          const label = isShared?'shared':g.domain;
+          return `<div style="display:flex;align-items:center;gap:8px;">
+            <div style="font-size:11px;color:var(--text2);min-width:160px;font-family:var(--mono);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${escapeHtml(label)}</div>
+            <div style="flex:1;height:5px;border-radius:3px;background:var(--surface3);"><div style="height:100%;border-radius:3px;background:${color};width:${sharePct.toFixed(1)}%;"></div></div>
+            <div style="font-size:11px;font-family:var(--mono);color:var(--text3);min-width:40px;text-align:right;">${g.devices.length}</div>
+          </div>`;
+        }).join('')}
+        ${computeOrgGroups().length>15?`<div style="font-size:11px;color:var(--text3);padding-top:4px;">… in še ${computeOrgGroups().length-15} organizacij</div>`:''}
+      </div>
+    </div>`;
+}
+
+// ─── ORG DRILL DOWN ──────────────────────────────────────────────────────
+function drillDownOrg(domain) {
+  // Switch to devices tab and filter by domain
+  activeTab = 'devices';
+  filterPlatform = 'all';
+  filterStatus = 'all';
+  if (domain === '__shared__') {
+    searchQuery = '';
+    // Filter is done via a special flag — we'll handle by adding domain to search
+    // Actually, simplest: set search to the domain string so user sees context
+    searchQuery = '';
+    // Override: temporarily filter by UPN domain
+    _drillDomain = domain;
+  } else {
+    searchQuery = '@' + domain;
+    _drillDomain = null;
+  }
+  renderDashboard();
+  // Focus search
+  setTimeout(()=>{ const el=document.getElementById('search-input'); if(el) el.focus(); }, 100);
+  toast(`Filtrirano: ${domain==='__shared__'?'Shared naprave':domain}`, 'ok');
+}
+
+let _drillDomain = null;
+
+// ─── ORGS CONTROLS ───────────────────────────────────────────────────────
+function onOrgSearch(val) {
+  orgSearch = val;
+  renderDashboard();
+  const inp = document.getElementById('org-search-input');
+  if(inp){inp.focus();inp.setSelectionRange(val.length,val.length);}
+}
+
+function setOrgSort(key) {
+  if (orgSortKey===key) orgSortDir = orgSortDir==='desc'?'asc':'desc';
+  else { orgSortKey=key; orgSortDir='desc'; }
+  renderDashboard();
+  // Restore focus on org search
+  setTimeout(()=>{ const el=document.getElementById('org-search-input'); if(el) el.focus(); }, 50);
+}
+
+// ─── CHART ───────────────────────────────────────────────────────────────
 function drawTrendChart() {
   const svg = document.getElementById('trend-svg');
   if (!svg) return;
-
   const data = computeTrendData();
   const { buckets, labels } = data;
-  if (buckets.length === 0) return;
-
-  const W = 800, H = 240;
-  const padL = 38, padR = 12, padT = 14, padB = 28;
-  const chartW = W - padL - padR;
-  const chartH = H - padT - padB;
-
-  const max = Math.max(...buckets, 1);
-  // Y-axis steps (nice rounding)
-  const yStep = max <= 5 ? 1 : max <= 10 ? 2 : max <= 25 ? 5 : max <= 50 ? 10 : max <= 100 ? 20 : Math.ceil(max / 5 / 10) * 10;
-  const yMax = Math.ceil(max / yStep) * yStep;
-  const yTicks = [];
-  for (let v = 0; v <= yMax; v += yStep) yTicks.push(v);
-
-  const n = buckets.length;
-  const xFor = i => n === 1 ? padL + chartW/2 : padL + (i / (n - 1)) * chartW;
-  const yFor = v => padT + chartH - (v / yMax) * chartH;
-
-  const accent = trendPlatform === 'all' ? '#378ADD' : platformColor(trendPlatform);
-
-  // Line path
-  const linePath = buckets.map((v, i) => `${i === 0 ? 'M' : 'L'}${xFor(i).toFixed(1)},${yFor(v).toFixed(1)}`).join(' ');
-  // Area path
-  const areaPath = linePath + ` L${xFor(n-1).toFixed(1)},${yFor(0)} L${xFor(0).toFixed(1)},${yFor(0)} Z`;
-
-  // X-axis labels — pick a reasonable number
-  const xLabelCount = Math.min(8, n);
-  const xLabelStep = Math.max(1, Math.floor((n - 1) / (xLabelCount - 1 || 1)));
-  const xLabels = [];
-  for (let i = 0; i < n; i += xLabelStep) xLabels.push(i);
-  if (xLabels[xLabels.length - 1] !== n - 1) xLabels.push(n - 1);
-
-  let html = '';
-
-  // Gradient def
-  html += `<defs>
-    <linearGradient id="trend-grad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="${accent}" stop-opacity="0.5"/>
-      <stop offset="100%" stop-color="${accent}" stop-opacity="0"/>
-    </linearGradient>
-  </defs>`;
-
-  // Y grid lines + labels
-  yTicks.forEach(v => {
-    const y = yFor(v);
-    html += `<line class="trend-grid-line" x1="${padL}" y1="${y}" x2="${W-padR}" y2="${y}"/>`;
-    html += `<text class="trend-axis-text" x="${padL-6}" y="${y+3}" text-anchor="end">${v}</text>`;
+  if (!buckets.length) return;
+  const W=800,H=240,padL=38,padR=12,padT=14,padB=28;
+  const chartW=W-padL-padR, chartH=H-padT-padB;
+  const max=Math.max(...buckets,1);
+  const yStep=max<=5?1:max<=10?2:max<=25?5:max<=50?10:max<=100?20:Math.ceil(max/5/10)*10;
+  const yMax=Math.ceil(max/yStep)*yStep;
+  const yTicks=[];
+  for(let v=0;v<=yMax;v+=yStep) yTicks.push(v);
+  const n=buckets.length;
+  const xFor=i=>n===1?padL+chartW/2:padL+(i/(n-1))*chartW;
+  const yFor=v=>padT+chartH-(v/yMax)*chartH;
+  const accent=trendPlatform==='all'?'#378ADD':platformColor(trendPlatform);
+  const linePath=buckets.map((v,i)=>`${i===0?'M':'L'}${xFor(i).toFixed(1)},${yFor(v).toFixed(1)}`).join(' ');
+  const areaPath=linePath+` L${xFor(n-1).toFixed(1)},${yFor(0)} L${xFor(0).toFixed(1)},${yFor(0)} Z`;
+  const xLabelCount=Math.min(8,n);
+  const xLabelStep=Math.max(1,Math.floor((n-1)/(xLabelCount-1||1)));
+  const xLabels=[];
+  for(let i=0;i<n;i+=xLabelStep) xLabels.push(i);
+  if(xLabels[xLabels.length-1]!==n-1) xLabels.push(n-1);
+  let html=`<defs><linearGradient id="trend-grad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="${accent}" stop-opacity="0.5"/><stop offset="100%" stop-color="${accent}" stop-opacity="0"/></linearGradient></defs>`;
+  yTicks.forEach(v=>{
+    const y=yFor(v);
+    html+=`<line class="trend-grid-line" x1="${padL}" y1="${y}" x2="${W-padR}" y2="${y}"/>`;
+    html+=`<text class="trend-axis-text" x="${padL-6}" y="${y+3}" text-anchor="end">${v}</text>`;
   });
-
-  // Area + line
-  html += `<path d="${areaPath}" fill="url(#trend-grad)" class="trend-area"/>`;
-  html += `<path d="${linePath}" class="trend-line" stroke="${accent}"/>`;
-
-  // X labels
-  xLabels.forEach(i => {
-    const x = xFor(i);
-    html += `<text class="trend-axis-text" x="${x}" y="${H-10}" text-anchor="middle">${fmtDateShort(labels[i])}</text>`;
+  html+=`<path d="${areaPath}" fill="url(#trend-grad)" class="trend-area"/>`;
+  html+=`<path d="${linePath}" class="trend-line" stroke="${accent}"/>`;
+  xLabels.forEach(i=>{ html+=`<text class="trend-axis-text" x="${xFor(i)}" y="${H-10}" text-anchor="middle">${fmtDateShort(labels[i])}</text>`; });
+  const showAllDots=n<=60;
+  buckets.forEach((v,i)=>{
+    if(!showAllDots&&v===0) return;
+    const x=xFor(i),y=yFor(v),r=v>0?3:2;
+    html+=`<circle class="trend-dot" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r}" fill="${v>0?accent:'var(--border3)'}" stroke="${v>0?'var(--surface)':'transparent'}" stroke-width="1.5" data-i="${i}"/>`;
   });
-
-  // Dots (interactive) — only show if not too many
-  const showAllDots = n <= 60;
-  buckets.forEach((v, i) => {
-    if (!showAllDots && v === 0) return;
-    const x = xFor(i), y = yFor(v);
-    const r = v > 0 ? 3 : 2;
-    html += `<circle class="trend-dot" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r}" fill="${v>0?accent:'var(--border3)'}" stroke="${v>0?'var(--surface)':'transparent'}" stroke-width="1.5" data-i="${i}"/>`;
-  });
-
-  svg.innerHTML = html;
-
-  // Hover interactions
-  const tooltip = document.getElementById('trend-tooltip');
-  svg.querySelectorAll('.trend-dot').forEach(dot => {
-    dot.addEventListener('mouseenter', e => {
-      const i = parseInt(e.target.dataset.i);
-      const v = buckets[i];
-      const d = labels[i];
-      const dateStr = d.toLocaleDateString('sl-SI', { day:'numeric', month:'long', year:'numeric' });
-      tooltip.innerHTML = `
-        <div class="chart-tooltip-date">${dateStr}</div>
-        <div class="chart-tooltip-val"><span class="dot" style="background:${accent};"></span>${v} ${v === 1 ? 'naprava' : v >= 2 && v <= 4 ? 'naprave' : 'naprav'}</div>
-      `;
-      tooltip.style.opacity = '1';
-      const svgRect = svg.getBoundingClientRect();
-      const wrapRect = svg.parentElement.getBoundingClientRect();
-      const cx = parseFloat(e.target.getAttribute('cx'));
-      const cy = parseFloat(e.target.getAttribute('cy'));
-      const realX = (cx / W) * svgRect.width;
-      const realY = (cy / H) * svgRect.height;
-      const ttW = tooltip.offsetWidth;
-      const ttH = tooltip.offsetHeight;
-      let left = realX - ttW / 2;
-      let top = realY - ttH - 12;
-      if (left < 0) left = 4;
-      if (left + ttW > wrapRect.width) left = wrapRect.width - ttW - 4;
-      if (top < 0) top = realY + 12;
-      tooltip.style.left = left + 'px';
-      tooltip.style.top = top + 'px';
+  svg.innerHTML=html;
+  const tooltip=document.getElementById('trend-tooltip');
+  svg.querySelectorAll('.trend-dot').forEach(dot=>{
+    dot.addEventListener('mouseenter',e=>{
+      const i=parseInt(e.target.dataset.i), v=buckets[i], d=labels[i];
+      const dateStr=d.toLocaleDateString('sl-SI',{day:'numeric',month:'long',year:'numeric'});
+      tooltip.innerHTML=`<div class="chart-tooltip-date">${dateStr}</div><div class="chart-tooltip-val"><span class="dot" style="background:${accent};"></span>${v} ${v===1?'naprava':v>=2&&v<=4?'naprave':'naprav'}</div>`;
+      tooltip.style.opacity='1';
+      const svgRect=svg.getBoundingClientRect(),wrapRect=svg.parentElement.getBoundingClientRect();
+      const cx=parseFloat(e.target.getAttribute('cx')),cy=parseFloat(e.target.getAttribute('cy'));
+      const realX=(cx/W)*svgRect.width, realY=(cy/H)*svgRect.height;
+      const ttW=tooltip.offsetWidth,ttH=tooltip.offsetHeight;
+      let left=realX-ttW/2, top=realY-ttH-12;
+      if(left<0) left=4;
+      if(left+ttW>wrapRect.width) left=wrapRect.width-ttW-4;
+      if(top<0) top=realY+12;
+      tooltip.style.left=left+'px'; tooltip.style.top=top+'px';
     });
-    dot.addEventListener('mouseleave', () => {
-      tooltip.style.opacity = '0';
-    });
+    dot.addEventListener('mouseleave',()=>{ tooltip.style.opacity='0'; });
   });
 }
 
-function kpiCard(label, value, sub, accent, onClick) {
-  const clickable = !!onClick;
-  const handler = clickable ? `onclick='(${onClick.toString()})()'` : '';
+// ─── KPI + SORT + FILTER ─────────────────────────────────────────────────
+function kpiCard(label,value,sub,accent,onClick) {
+  const clickable=!!onClick;
+  const handler=clickable?`onclick='(${onClick.toString()})()'`:'';
   return `<div class="kpi-card ${clickable?'clickable':''}" style="border-top:2px solid ${accent};" ${handler}>
     <div class="kpi-glow" style="background:radial-gradient(ellipse at 50% 0%,${accent}18 0%,transparent 70%);"></div>
     <div class="kpi-label">${label}</div>
@@ -919,128 +936,88 @@ function kpiCard(label, value, sub, accent, onClick) {
   </div>`;
 }
 
-function sortableTh(label, key) {
-  const active = sortKey === key;
-  const arrow = active ? (sortDir === 'asc' ? '▲' : '▼') : '';
+function sortableTh(label,key) {
+  const active=sortKey===key, arrow=active?(sortDir==='asc'?'▲':'▼'):'';
   return `<th class="sortable" onclick="setSort('${key}')">${label}${arrow?` <span class="sort-arrow">${arrow}</span>`:''}</th>`;
 }
 
 function setSort(key) {
-  if (sortKey === key) {
-    sortDir = sortDir === 'asc' ? 'desc' : 'asc';
-  } else {
-    sortKey = key;
-    sortDir = (key === 'lastSyncDateTime' || key === 'enrolledDateTime') ? 'desc' : 'asc';
-  }
+  if(sortKey===key) sortDir=sortDir==='asc'?'desc':'asc';
+  else { sortKey=key; sortDir=(key==='lastSyncDateTime'||key==='enrolledDateTime')?'desc':'asc'; }
   renderDashboard();
 }
 
-function setFilter(type, val) {
-  if (type === 'plat') filterPlatform = val;
-  else filterStatus = val;
+function setFilter(type,val) {
+  if(type==='plat') filterPlatform=val; else filterStatus=val;
+  _drillDomain=null;
   renderDashboard();
 }
 
 function onSearch(val) {
-  searchQuery = val;
-  // Re-render with focus preservation
+  searchQuery=val; _drillDomain=null;
   renderDashboard();
-  const inp = document.getElementById('search-input');
-  if (inp) { inp.focus(); inp.setSelectionRange(val.length, val.length); }
+  const inp=document.getElementById('search-input');
+  if(inp){inp.focus();inp.setSelectionRange(val.length,val.length);}
 }
 
 function setTrendRange(r) {
-  trendRange = r;
-  if (r === 'custom' && (!trendCustom.from || !trendCustom.to)) {
-    const today = new Date();
-    const monthAgo = new Date();
-    monthAgo.setDate(today.getDate() - 30);
-    trendCustom.from = fmtDateISO(monthAgo);
-    trendCustom.to = fmtDateISO(today);
+  trendRange=r;
+  if(r==='custom'&&(!trendCustom.from||!trendCustom.to)){
+    const today=new Date(), monthAgo=new Date();
+    monthAgo.setDate(today.getDate()-30);
+    trendCustom.from=fmtDateISO(monthAgo); trendCustom.to=fmtDateISO(today);
   }
   renderDashboard();
 }
 
-function setTrendCustom(which, val) {
-  trendCustom[which] = val;
-  if (trendCustom.from && trendCustom.to && new Date(trendCustom.from) > new Date(trendCustom.to)) {
-    toast('Začetni datum mora biti pred končnim', 'err');
-    return;
-  }
+function setTrendCustom(which,val) {
+  trendCustom[which]=val;
+  if(trendCustom.from&&trendCustom.to&&new Date(trendCustom.from)>new Date(trendCustom.to)){ toast('Začetni datum mora biti pred končnim','err'); return; }
   renderDashboard();
 }
 
-function setTrendPlatform(p) {
-  trendPlatform = p;
-  renderDashboard();
-}
+function setTrendPlatform(p) { trendPlatform=p; renderDashboard(); }
 
 // ─── DEVICE MODAL ────────────────────────────────────────────────────────
 function showDeviceModal(id) {
-  const d = allDevices.find(x => x.id === id);
-  if (!d) return;
-  const color = platformColor(d.operatingSystem);
-
-  document.getElementById('modal-root').innerHTML = `
+  const d=allDevices.find(x=>x.id===id); if(!d) return;
+  const color=platformColor(d.operatingSystem);
+  document.getElementById('modal-root').innerHTML=`
     <div class="modal-bg" onclick="if(event.target===this)closeModal()">
       <div class="modal-card anim">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
           <div class="dev-icon" style="background:${color}22;width:40px;height:40px;font-size:20px;">${platformEmoji(d.operatingSystem)}</div>
-          <div>
-            <div class="modal-title">${escapeHtml(d.deviceName || '—')}</div>
-            <div class="modal-sub">${escapeHtml(d.userPrincipalName || 'Shared device')}</div>
-          </div>
+          <div><div class="modal-title">${escapeHtml(d.deviceName||'—')}</div><div class="modal-sub">${escapeHtml(d.userPrincipalName||'Shared device')}</div></div>
         </div>
-        ${modalRow('OS', `${d.operatingSystem || '—'} ${d.osVersion || ''}`)}
-        ${modalRow('Model', d.model)}
-        ${modalRow('Proizvajalec', d.manufacturer)}
-        ${modalRow('Skladnost', d.complianceState)}
-        ${modalRow('Lastništvo', d.managedDeviceOwnerType)}
-        ${modalRow('Serijska št.', d.serialNumber)}
-        ${modalRow('IMEI', d.imei)}
-        ${modalRow('WiFi MAC', d.wiFiMacAddress)}
-        ${modalRow('Zadnja sinhronizacija', d.lastSyncDateTime ? new Date(d.lastSyncDateTime).toLocaleString('sl-SI') : '—')}
-        ${modalRow('Registrirana', d.enrolledDateTime ? new Date(d.enrolledDateTime).toLocaleString('sl-SI') : '—')}
-        ${modalRow('Intune ID', d.id)}
+        ${modalRow('OS',`${d.operatingSystem||'—'} ${d.osVersion||''}`)}
+        ${modalRow('Model',d.model)} ${modalRow('Proizvajalec',d.manufacturer)}
+        ${modalRow('Skladnost',d.complianceState)} ${modalRow('Lastništvo',d.managedDeviceOwnerType)}
+        ${modalRow('Serijska št.',d.serialNumber)} ${modalRow('IMEI',d.imei)}
+        ${modalRow('WiFi MAC',d.wiFiMacAddress)}
+        ${modalRow('Zadnja sinhronizacija',d.lastSyncDateTime?new Date(d.lastSyncDateTime).toLocaleString('sl-SI'):'—')}
+        ${modalRow('Registrirana',d.enrolledDateTime?new Date(d.enrolledDateTime).toLocaleString('sl-SI'):'—')}
+        ${modalRow('Intune ID',d.id)}
         <button class="btn btn-ghost modal-close" onclick="closeModal()">Zapri</button>
       </div>
     </div>`;
 }
 
-function modalRow(label, val) {
-  return `<div class="modal-row">
-    <span class="modal-row-label">${label}</span>
-    <span class="modal-row-val">${escapeHtml(val || '—')}</span>
-  </div>`;
+function modalRow(label,val) {
+  return `<div class="modal-row"><span class="modal-row-label">${label}</span><span class="modal-row-val">${escapeHtml(val||'—')}</span></div>`;
 }
 
-function closeModal() {
-  document.getElementById('modal-root').innerHTML = '';
-}
+function closeModal() { document.getElementById('modal-root').innerHTML=''; }
 
 function showStaleModal() {
-  const stale = allDevices
-    .map(d => ({ d, days: daysSince(d.lastSyncDateTime) }))
-    .filter(x => x.days !== null && x.days > 30)
-    .sort((a,b) => b.days - a.days);
-
-  document.getElementById('modal-root').innerHTML = `
+  const stale=allDevices.map(d=>({d,days:daysSince(d.lastSyncDateTime)})).filter(x=>x.days!==null&&x.days>30).sort((a,b)=>b.days-a.days);
+  document.getElementById('modal-root').innerHTML=`
     <div class="modal-bg" onclick="if(event.target===this)closeModal()">
       <div class="modal-card anim">
         <div class="modal-title">Naprave brez sinhronizacije > 30 dni</div>
         <div class="modal-sub">${stale.length} naprav potrebuje pregled</div>
-        ${stale.length === 0 ? `<div style="padding:20px;text-align:center;color:var(--text3);font-size:12px;">Nobena naprava ni v tem stanju 🎉</div>` :
-          stale.slice(0, 50).map(({d, days}) => `
-            <div class="modal-row">
-              <span style="display:flex;align-items:center;gap:8px;">
-                <span style="color:${platformColor(d.operatingSystem)};">${platformEmoji(d.operatingSystem)}</span>
-                <span style="font-family:var(--mono);font-size:11px;">${escapeHtml(d.deviceName || '—')}</span>
-              </span>
-              <span class="badge badge-gp">${days}d</span>
-            </div>
-          `).join('')
-        }
-        ${stale.length > 50 ? `<div style="text-align:center;color:var(--text3);font-size:11px;padding-top:10px;">… in še ${stale.length - 50} drugih</div>` : ''}
+        ${stale.length===0?`<div style="padding:20px;text-align:center;color:var(--text3);font-size:12px;">Nobena naprava ni v tem stanju 🎉</div>`:
+          stale.slice(0,50).map(({d,days})=>`<div class="modal-row"><span style="display:flex;align-items:center;gap:8px;"><span style="color:${platformColor(d.operatingSystem)};">${platformEmoji(d.operatingSystem)}</span><span style="font-family:var(--mono);font-size:11px;">${escapeHtml(d.deviceName||'—')}</span></span><span class="badge badge-gp">${days}d</span></div>`).join('')}
+        ${stale.length>50?`<div style="text-align:center;color:var(--text3);font-size:11px;padding-top:10px;">… in še ${stale.length-50} drugih</div>`:''}
         <button class="btn btn-ghost modal-close" onclick="closeModal()">Zapri</button>
       </div>
     </div>`;
@@ -1048,97 +1025,64 @@ function showStaleModal() {
 
 // ─── CSV EXPORT ──────────────────────────────────────────────────────────
 function exportCSV() {
-  if (!allDevices.length) {
-    toast('Ni podatkov za izvoz', 'warn');
-    return;
-  }
-  const filtered = allDevices.filter(d => {
-    const mp = filterPlatform === 'all' || d.operatingSystem === filterPlatform;
-    const ms = filterStatus === 'all' || d.complianceState === filterStatus;
-    const q = searchQuery.toLowerCase();
-    const matchQ = !q || (d.deviceName||'').toLowerCase().includes(q)
-                    || (d.userPrincipalName||'').toLowerCase().includes(q)
-                    || (d.model||'').toLowerCase().includes(q);
-    return mp && ms && matchQ;
+  if(!allDevices.length){toast('Ni podatkov za izvoz','warn');return;}
+  if(activeTab==='orgs') { exportOrgsCSV(); return; }
+  const filtered=allDevices.filter(d=>{
+    const mp=filterPlatform==='all'||d.operatingSystem===filterPlatform;
+    const ms=filterStatus==='all'||d.complianceState===filterStatus;
+    const q=searchQuery.toLowerCase();
+    const matchQ=!q||(d.deviceName||'').toLowerCase().includes(q)||(d.userPrincipalName||'').toLowerCase().includes(q)||(d.model||'').toLowerCase().includes(q);
+    return mp&&ms&&matchQ;
   });
+  const cols=['deviceName','userPrincipalName','operatingSystem','osVersion','model','manufacturer','complianceState','managedDeviceOwnerType','lastSyncDateTime','enrolledDateTime','serialNumber','imei'];
+  const headers=['Ime naprave','Uporabnik','OS','Verzija OS','Model','Proizvajalec','Skladnost','Lastništvo','Zadnja sync','Registrirana','Serijska št.','IMEI'];
+  const esc=v=>{if(v==null)return '';const s=String(v).replace(/"/g,'""');return /[",\n]/.test(s)?`"${s}"`:s;};
+  const rows=[headers.join(','),...filtered.map(d=>cols.map(c=>esc(d[c])).join(','))];
+  downloadCSV('\uFEFF'+rows.join('\n'), `mdm-pulse-${fmtDateISO(new Date())}.csv`);
+  toast(`Izvoženih ${filtered.length} naprav`,'ok');
+}
 
-  const cols = ['deviceName','userPrincipalName','operatingSystem','osVersion','model','manufacturer','complianceState','managedDeviceOwnerType','lastSyncDateTime','enrolledDateTime','serialNumber','imei'];
-  const headers = ['Ime naprave','Uporabnik','OS','Verzija OS','Model','Proizvajalec','Skladnost','Lastništvo','Zadnja sync','Registrirana','Serijska št.','IMEI'];
-  const esc = v => {
-    if (v == null) return '';
-    const s = String(v).replace(/"/g, '""');
-    return /[",\n]/.test(s) ? `"${s}"` : s;
-  };
-  const rows = [headers.join(','), ...filtered.map(d => cols.map(c => esc(d[c])).join(','))];
-  const csv = '\uFEFF' + rows.join('\n'); // BOM for Excel UTF-8
-  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = `mdm-pulse-${fmtDateISO(new Date())}.csv`;
-  a.click();
+function exportOrgsCSV() {
+  const groups=computeOrgGroups();
+  const headers=['Domena','Skupaj naprav','iOS','iPadOS','Android','Skladne','Neskladne','Grace','Neznano','% skladnosti'];
+  const esc=v=>{if(v==null)return '';const s=String(v).replace(/"/g,'""');return /[",\n]/.test(s)?`"${s}"`:s;};
+  const rows=[headers.join(','),...groups.map(g=>{
+    const total=g.devices.length;
+    const pct=total?Math.round(g.compliance.compliant/total*100):0;
+    return [g.domain==='__shared__'?'Shared/brez UPN':g.domain,total,g.platforms.iOS,g.platforms.iPadOS,g.platforms.Android,g.compliance.compliant,g.compliance.noncompliant,g.compliance.inGracePeriod,g.compliance.unknown,pct+'%'].map(esc).join(',');
+  })];
+  downloadCSV('\uFEFF'+rows.join('\n'), `mdm-pulse-org-${fmtDateISO(new Date())}.csv`);
+  toast(`Izvoženih ${groups.length} organizacij`,'ok');
+}
+
+function downloadCSV(content, filename) {
+  const blob=new Blob([content],{type:'text/csv;charset=utf-8'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a'); a.href=url; a.download=filename; a.click();
   URL.revokeObjectURL(url);
-  toast(`Izvoženih ${filtered.length} naprav`, 'ok');
 }
 
-// ─── ESCAPE HELPERS ──────────────────────────────────────────────────────
-function escapeHtml(s) {
-  if (s == null) return '';
-  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-}
-function escapeAttr(s) {
-  return escapeHtml(s);
-}
+// ─── ESCAPE ───────────────────────────────────────────────────────────────
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeModal(); });
 
-// ─── ESC TO CLOSE MODAL ──────────────────────────────────────────────────
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeModal();
-});
-
-// ─── AUTO RESTORE SESSION / REDIRECT CALLBACK ─────────────────────────────
+// ─── AUTO RESTORE ─────────────────────────────────────────────────────────
 (async function() {
-  // Prikaži trenutni URL kot pomoč pri konfiguraciji
-  const urlDisplay = document.getElementById('current-url-display');
-  if (urlDisplay) {
-    urlDisplay.textContent = window.location.href.split('?')[0].split('#')[0];
-  }
-
-  // Najprej preveri localStorage, fallback na sessionStorage (za stare seje)
-  const t = localStorage.getItem('mdm_tenant') || sessionStorage.getItem('mdm_tenant');
-  const c = localStorage.getItem('mdm_client') || sessionStorage.getItem('mdm_client');
-  if (t) document.getElementById('cfg-tenant').value = t;
-  if (c) document.getElementById('cfg-client').value = c;
-  if (!t || !c) return;
-
+  const t=localStorage.getItem('mdm_tenant')||sessionStorage.getItem('mdm_tenant');
+  const c=localStorage.getItem('mdm_client')||sessionStorage.getItem('mdm_client');
+  if(t) document.getElementById('cfg-tenant').value=t;
+  if(c) document.getElementById('cfg-client').value=c;
+  if(!t||!c) return;
   try {
-    initMsal(t, c);
+    initMsal(t,c);
     await msalInstance.initialize();
-
-    // Obravnavaj odgovor iz redirect flow-a (če smo se ravno vrnili iz Microsoft prijave)
-    const redirectResp = await msalInstance.handleRedirectPromise();
-    if (redirectResp && redirectResp.account) {
-      account = redirectResp.account;
-      msalInstance.setActiveAccount(account);
-      afterLogin();
-      return;
-    }
-
-    // Sicer: ali imamo še prijavljen račun v cache?
-    const accounts = msalInstance.getAllAccounts();
-    if (accounts.length > 0) {
-      account = accounts[0];
-      msalInstance.setActiveAccount(account);
-      afterLogin();
-    }
-  } catch(e) {
-    console.warn('MSAL restore napaka:', e);
-  }
+    const redirectResp=await msalInstance.handleRedirectPromise();
+    if(redirectResp&&redirectResp.account){ account=redirectResp.account; msalInstance.setActiveAccount(account); afterLogin(); return; }
+    const accounts=msalInstance.getAllAccounts();
+    if(accounts.length>0){ account=accounts[0]; msalInstance.setActiveAccount(account); afterLogin(); }
+  } catch(e){ console.warn('MSAL restore napaka:',e); }
 })();
 
-// Re-draw chart on window resize
-window.addEventListener('resize', () => {
-  if (document.getElementById('trend-svg')) drawTrendChart();
-});
+window.addEventListener('resize',()=>{ if(document.getElementById('trend-svg')) drawTrendChart(); });
 </script>
 </body>
 </html>
