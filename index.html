@@ -271,6 +271,31 @@ tbody tr:hover td{background:var(--surface2);}
           </div>
           Prijava z Microsoft računom
         </button>
+        
+          <div style="margin-top:14px;">
+            <button onclick="toggleSaPanel()" style="background:none;border:none;cursor:pointer;font-size:11px;color:var(--text3);font-family:var(--font);padding:0;transition:color .15s;" id="sa-toggle-btn">napredna prijava</button>
+          </div>
+          
+          <div id="sa-panel" style="display:none;margin-top:14px;">
+            <div class="config-section">
+              <div class="config-title">Service Account</div>
+              <div class="field-wrap">
+                <div class="field-label">Tenant ID</div>
+                <input class="field-input" id="sa-tenant" type="text" placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" spellcheck="false"/>
+              </div>
+              <div class="field-wrap">
+                <div class="field-label">Client ID</div>
+                <input class="field-input" id="sa-client" type="text" placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" spellcheck="false"/>
+              </div>
+              <div class="field-wrap" style="margin-bottom:0;">
+                <div class="field-label">Client Secret</div>
+                <input class="field-input" id="sa-secret" type="password" placeholder="••••••••••••••••••••••••••••••••" spellcheck="false"/>
+              </div>
+            </div>
+            <button class="btn-login" id="btn-sa-login" onclick="doServiceLogin()" style="margin-top:10px;">
+              Prijava s service računom
+            </button>
+          </div>
       </div>
     </div>
     <div id="dashboard" style="display:none;"></div>
@@ -353,7 +378,38 @@ function afterLogin() {
 }
 
 async function getToken() {
-  const resp = await msalInstance.acquireTokenSilent({ scopes: ['https://graph.microsoft.com/DeviceManagementManagedDevices.Read.All'], account });
+  // Check if service account token exists and is still valid
+  const saToken = sessionStorage.getItem('mdm_sa_token');
+  const saExp = parseInt(sessionStorage.getItem('mdm_sa_token_exp') || '0');
+  
+  if (saToken && Date.now() < saExp) {
+    return saToken;
+  }
+  
+  // If SA token expired, refresh it
+  if (saToken && Date.now() >= saExp) {
+    const t = localStorage.getItem('mdm_sa_tenant');
+    const c = localStorage.getItem('mdm_sa_client');
+    const s = prompt('Session potekla. Vnesi Client Secret za obnovitev:');
+    if (t && c && s) {
+      // Re-run silent refresh
+      const body = new URLSearchParams({ grant_type:'client_credentials', client_id:c, client_secret:s, scope:'https://graph.microsoft.com/.default' });
+      const res = await fetch(`https://login.microsoftonline.com/${t}/oauth2/v2.0/token`, { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body });
+      const data = await res.json();
+      if (data.access_token) {
+        sessionStorage.setItem('mdm_sa_token', data.access_token);
+        sessionStorage.setItem('mdm_sa_token_exp', String(Date.now() + (data.expires_in - 60) * 1000));
+        return data.access_token;
+      }
+    }
+    throw new Error('Seja potekla, prosim osveži stran.');
+  }
+  
+  // Normal MSAL flow
+  const resp = await msalInstance.acquireTokenSilent({
+    scopes: ['https://graph.microsoft.com/DeviceManagementManagedDevices.Read.All'],
+    account
+  });
   return resp.accessToken;
 }
 
@@ -1083,6 +1139,87 @@ document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeModal(); });
 })();
 
 window.addEventListener('resize',()=>{ if(document.getElementById('trend-svg')) drawTrendChart(); });
+
+function toggleSaPanel() {
+  const panel = document.getElementById('sa-panel');
+  const isHidden = panel.style.display === 'none';
+  panel.style.display = isHidden ? 'block' : 'none';
+  // Restore saved values if any
+  if (isHidden) {
+    const t = localStorage.getItem('mdm_sa_tenant');
+    const c = localStorage.getItem('mdm_sa_client');
+    if (t) document.getElementById('sa-tenant').value = t;
+    if (c) document.getElementById('sa-client').value = c;
+  }
+}
+
+async function doServiceLogin() {
+  const tenantId = document.getElementById('sa-tenant').value.trim();
+  const clientId = document.getElementById('sa-client').value.trim();
+  const clientSecret = document.getElementById('sa-secret').value.trim();
+  const errEl = document.getElementById('login-error');
+
+  if (!tenantId || !clientId || !clientSecret) {
+    errEl.textContent = 'Vnesi Tenant ID, Client ID in Client Secret.';
+    errEl.style.display = 'block';
+    return;
+  }
+  errEl.style.display = 'none';
+
+  const btn = document.getElementById('btn-sa-login');
+  btn.disabled = true;
+  btn.textContent = 'Prijavljam…';
+
+  try {
+    const body = new URLSearchParams({
+      grant_type: 'client_credentials',
+      client_id: clientId,
+      client_secret: clientSecret,
+      scope: 'https://graph.microsoft.com/.default'
+    });
+
+    const res = await fetch(`https://login.microsoftonline.com/${tenantId}/oauth2/v2.0/token`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body
+    });
+
+    const data = await res.json();
+    if (!res.ok || !data.access_token) {
+      throw new Error(data.error_description || data.error || `Token napaka ${res.status}`);
+    }
+
+    // Store token and metadata
+    localStorage.setItem('mdm_sa_tenant', tenantId);
+    localStorage.setItem('mdm_sa_client', clientId);
+    sessionStorage.setItem('mdm_sa_token', data.access_token);
+    sessionStorage.setItem('mdm_sa_token_exp', String(Date.now() + (data.expires_in - 60) * 1000));
+
+    // Set fake "account" for display
+    account = { name: 'Service Account', username: clientId };
+    
+    // Show dashboard
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('dashboard').style.display = 'block';
+    document.getElementById('topbar-right').innerHTML = `
+      <div class="live-pill"><div class="live-dot"></div>Živi podatki</div>
+      <div class="user-chip">
+        <div class="user-avatar">SA</div>
+        <span>Service Account</span>
+      </div>
+      <button class="btn btn-ghost" onclick="exportCSV()">⬇ CSV</button>
+      <button class="btn btn-ghost" onclick="refreshData()">↻ Osveži</button>
+      <button class="btn btn-danger" onclick="doLogout()">Odjava</button>
+    `;
+    loadDevices();
+
+  } catch(e) {
+    errEl.textContent = e.message || 'Prijava ni uspela.';
+    errEl.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = 'Prijava s service računom';
+  }
+}  
 </script>
 </body>
 </html>
